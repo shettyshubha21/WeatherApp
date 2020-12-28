@@ -1,0 +1,118 @@
+.Favourite {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 100px;
+}
+
+.message {
+    text-align: center;
+    margin-top: 350px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.image {
+    margin-left: 660px;
+    margin-top: -190px;
+    background: url('/src/images/icon_nothing.png') no-repeat center center/cover;
+    height: 84px;
+    width: 159px;
+}
+
+.display {
+    margin-left: 100px;
+    height: 73px;
+    width: 1300px;
+    background-color: rgba(255, 255, 255,0.2);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(275, 275, 275, 0.3);
+}
+
+.name {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1px;
+}
+
+.photo {
+    margin-top: 10px;
+}
+
+.degree {
+    margin-top: 16px;
+    margin-left: 5px;
+}
+
+.description {
+    margin-left: 20px;
+}
+
+.favIcon {
+    margin-top: 30px;
+    color: yellow;
+    font-size: 20px;
+    margin-right: 50px;
+}
+
+.display:hover {
+    background-color: rgba(255, 255, 255,0.3);
+}
+
+.removeAll {
+    margin-top: -35px;
+    margin-left: 120px;
+    margin-right: 150px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.removeButton {
+    margin-right: 10px;
+    background: none;
+    border: none;
+    color: white;
+}
+
+
+.searchField {
+    margin-top: -30px;
+    margin-left: 900px;
+}
+
+.searchField input {
+    width: 400px;
+    padding: 14px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid #fff;
+    border-radius: 5px 0 0 5px;
+    font-size: 18px;
+    color: #fff;
+    outline: none;
+    border: none;
+}
+
+.searchField button {
+    padding: 14px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid #fff;
+    border-radius: 0 5px 5px 0;
+    font-size: 17px;
+    color: #fff;
+    outline: none;
+    border: none;
+}

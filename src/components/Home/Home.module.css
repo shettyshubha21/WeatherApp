@@ -1,0 +1,71 @@
+.Home {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.line {
+    height: 1px;
+    margin-left: 100px;
+    width: 1300px;
+    border: 1px solid #FFFFFF;
+    opacity: 0.3;
+    margin-top: 400px;
+}
+
+
+.searchField {
+    margin-top: -30px;
+    margin-left: 900px;
+}
+
+.searchField input {
+    width: 400px;
+    padding: 14px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid #fff;
+    border-radius: 5px 0 0 5px;
+    font-size: 18px;
+    color: #fff;
+    outline: none;
+    border: none;
+}
+
+.searchField button {
+    padding: 14px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid #fff;
+    border-radius: 0 5px 5px 0;
+    font-size: 17px;
+    color: #fff;
+    outline: none;
+    border: none;
+}
+
+.favButton {
+    background: none;
+    font-size: 20px;
+    margin-left: 95px;
+    margin-top: 20px;
+    border: none;
+    color: white;
+}
+
+.Active {
+    color: yellow;
+}
+
+.favText {
+    margin-left: 135px;
+    margin-top: -35px;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.button {
+    margin-top: -350px;
+}

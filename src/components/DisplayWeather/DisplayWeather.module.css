@@ -1,0 +1,133 @@
+.DisplayWeather {
+    margin-top: 100px;  
+}
+
+.Name {
+    margin-left:100px ;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.icon {
+    margin-left: 700px;
+    margin-top: 60px;
+}
+
+.img {
+    height: 100px;
+    width: 100px;
+    margin-top: -30px;
+}
+
+.degree {
+    margin-left: 725px;
+    margin-top: -55px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 60px;
+    font-weight: 500;
+}
+
+.description {
+    margin-left: 690px;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    margin-top: -20px;
+} 
+
+.error {
+    position: fixed;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 210px;
+    width: 458px;
+    border-radius: 2px;
+    margin-top: 430px;
+    margin-left: 550px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.line {
+    height: 1px;
+    margin-left: 100px;
+    width: 1300px;
+    border: 1px solid #FFFFFF;
+    opacity: 0.3;
+    margin-top: 115px;
+}
+
+.icons {
+    position: fixed;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+   
+}
+
+.firstIcon{
+    font-size: 40px;
+    margin-left: 150px;
+    margin-top: 40px;
+}
+
+.secondIcon{
+    font-size: 40px;
+    margin-left: 150px;
+    margin-top: 40px;
+}
+
+.thirdIcon{
+    font-size: 40px;
+    margin-left: 170px;
+    margin-top: 40px;
+}
+
+.fourthIcon{
+    font-size: 40px;
+    margin-left: 160px;
+    margin-top: 40px;
+}
+
+.fifthIcon{
+    font-size: 40px;
+    margin-left: 200px;
+    margin-top: 40px;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    margin-top: 30px;
+}
+
+.icons span {
+    font-size: 22px;
+    font-weight: 500;
+} 
+
+.toggle {
+    margin-left: 815px;
+    margin-top: -5px;
+}
+
+.btn {
+    height: 32px;
+    width: 32px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color:red;
+}
+
+.Active {
+    color: red;
+    opacity: 0.5;
+}
+ 

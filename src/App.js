@@ -1,25 +1,116 @@
 import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useHistory,
+} from "react-router-dom";
+import Home from './components/Home/Home';
+import Favourite from './components/Favourite/Favourite';
+import RecentSearch from './components/RecentSearch/RecentSearch';
+import { useState, useEffect } from 'react';
+import Modal from './components/Modal/Modal';
+import cn from 'classnames';
+
 
 function App() {
+  const [date, setDate] = useState(new Date());
+  const [favInfo, setFavInfo] = useState([]);
+  const [message,setMessage] = useState(false);
+
+  const [searchInfo, setSearchInfo] =useState([]);
+
+  const dateBuilder = (d) => {
+    let months = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+
+    let days = [ "Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+    let day = days[d.getDay()];
+    let date = d.getDate();
+    let month = months[d.getMonth()];
+    let year = d.getFullYear();
+
+    return `${day},${date} ${month} ${year}`;
+};
+function timeBuilder(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; 
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+      <div className="background">
+      <div className="logo">
+            
+      </div>
+        <nav className="nav"> 
+          <ul className="list">
+           
+            <li>
+              <Link className="home" activeClassName="active" to="/">HOME</Link>
+            </li>
+            <li >
+              <Link className="fav" activeClassName="active" to="/favourite">FAVOURITE</Link>
+            </li> 
+           <li>
+              <Link className="search" activeClassName="active" to="/recentsearch">RECENT SEARCH</Link>
+            </li> 
+            <div className="date">{dateBuilder(new Date())} {timeBuilder(new Date())}</div>
+          </ul>
+          <div className="line"></div>
+        </nav>
+          
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/recentsearch">
+            <RecentSearch 
+              searchInfo = {searchInfo}
+              setSearchInfo = {setSearchInfo}
+
+              favInfo={favInfo}
+            />
+          </Route>
+          
+          <Route path="/favourite">
+          <Favourite favInfo={favInfo}
+          setFavInfo={setFavInfo} 
+            message={message}
+            setMessage={setMessage}
+          />
+          </Route>
+
+          <Route path="/modal">
+          <Modal
+            favInfo={favInfo}
+             setFavInfo={setFavInfo}
+            />
+          </Route>
+          <Route  path="/">
+            <Home favInfo={favInfo}
+             setFavInfo={setFavInfo}
+             message={message}
+            setMessage={setMessage}
+
+            searchInfo = {searchInfo}
+            setSearchInfo = {setSearchInfo}
+            />
+          </Route>
+        </Switch>
+        </div>
+      </div>
+    </Router>
   );
 }
+
 
 export default App;
