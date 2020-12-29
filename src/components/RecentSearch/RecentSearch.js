@@ -5,7 +5,7 @@ import Modal from '../Modal/Modal';
 import { BsSearch } from "react-icons/bs";
 import { useHistory } from "react-router-dom";
 
-const RecentSearch = ({searchInfo, setSearchInfo, favInfo, setSelectedIndex}) => {
+const RecentSearch = ({searchInfo, setSearchInfo, favInfo, setFavInfo, setSelectedIndex}) => {
 const [clear,setClear] = useState(false);
 let history = useHistory();
 
@@ -69,7 +69,7 @@ return (
                 <h1 className={styles.description}>{description}</h1>
             </div>
             <div className={styles.favIcon}>
-            {isFav ?<BsFillHeartFill/> : <BsHeart/> }
+            {isFav ? <BsFillHeartFill onClick={() => {const changeFav = favInfo.filter((ele) => ele.name !== name); setFavInfo(changeFav);} }/> : <BsHeart onClick={() => {const change = favInfo.filter((ele) => ele.name === name); console.log(change);}}/> }
             </div>
           </div>
         )

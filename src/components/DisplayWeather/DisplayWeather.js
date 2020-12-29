@@ -62,7 +62,7 @@ const  DisplayWeather = ({data}) => {
         </div>
         <div className={styles.text}>
             Precipitation
-            <span>{data.rain? data.rain['1h']  : '0%' }</span>
+            <span>{data.rain? data.rain['1h'] + 'mm'  : ( data.snow? data.snow['1h'] + 'mm' : '0%' ) }</span>
         </div>
         <div className={styles.thirdIcon}>
             <FiDroplet/>
@@ -83,7 +83,7 @@ const  DisplayWeather = ({data}) => {
         </div>  
         <div className={styles.text}>
             Visibility
-            <span>{Math.floor(data.visibility * 2.236936/1000)} mph</span>
+            <span>{Math.floor(data.visibility)} mph</span>
         </div>  
     </div> 
           </div>

@@ -19,7 +19,7 @@ function App() {
   const classNames2 = `fav ${selectedIndex === 1 ? 'selected' : undefined}`;
   const classNames3 = `search ${selectedIndex === 2 ? 'selected' : undefined}`;
 
-  const [favInfo, setFavInfo] = useLocalStorageState([]);
+  const [favInfo, setFavInfo] = useState([]);
   const [message,setMessage] = useState(false);
 
   const [searchInfo, setSearchInfo] =useLocalStorageState([]);
@@ -80,6 +80,7 @@ function timeBuilder(date) {
               setSearchInfo = {setSearchInfo}
 
               favInfo={favInfo}
+              setFavInfo={setFavInfo}
 
               setSelectedIndex={setSelectedIndex}
             />
