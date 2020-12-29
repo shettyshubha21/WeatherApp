@@ -1,12 +1,9 @@
 import React, {useState} from 'react';
-import PropTypes from 'prop-types';
 import styles from './DisplayWeather.module.css';
 import { FaThermometerHalf, FaCloudRain, FaWind } from "react-icons/fa";
 import { FiDroplet } from "react-icons/fi";
 import { AiOutlineEye } from "react-icons/ai";
-import { BsHeart } from "react-icons/bs";
 import cn from 'classnames';
-import Favourite from '../Favourite/Favourite';
 
 const  DisplayWeather = ({data}) => {
   const [degree, setDegree] = useState(true);
@@ -100,10 +97,5 @@ const  DisplayWeather = ({data}) => {
       
     );
   }
-
-
-DisplayWeather.propTypes = {
-
-};
 
 export default DisplayWeather;

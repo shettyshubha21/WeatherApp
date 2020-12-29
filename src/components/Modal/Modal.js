@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './Modal.module.css';
 
 const Modal = ({show,setShow, favInfo, setFavInfo, clear, setClear, searchInfo, setSearchInfo}) => {
@@ -41,11 +40,6 @@ return (
    }
 </div>
 );
-};
-
-
-Modal.propTypes = {
-
 };
 
 export default Modal;

@@ -1,26 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
-  useHistory,
 } from "react-router-dom";
 import Home from './components/Home/Home';
 import Favourite from './components/Favourite/Favourite';
 import RecentSearch from './components/RecentSearch/RecentSearch';
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import Modal from './components/Modal/Modal';
-import cn from 'classnames';
+import { useLocalStorageState } from './useLocalStorageState';
 
 
 function App() {
-  const [date, setDate] = useState(new Date());
-  const [favInfo, setFavInfo] = useState([]);
+  const[selectedIndex, setSelectedIndex] = useState(0);
+  const classNames1 = `home ${selectedIndex === 0 ? 'selected' : undefined}`;
+  const classNames2 = `fav ${selectedIndex === 1 ? 'selected' : undefined}`;
+  const classNames3 = `search ${selectedIndex === 2 ? 'selected' : undefined}`;
+
+  const [favInfo, setFavInfo] = useLocalStorageState([]);
   const [message,setMessage] = useState(false);
 
-  const [searchInfo, setSearchInfo] =useState([]);
+  const [searchInfo, setSearchInfo] =useLocalStorageState([]);
 
   const dateBuilder = (d) => {
     let months = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
@@ -55,13 +57,13 @@ function timeBuilder(date) {
           <ul className="list">
            
             <li>
-              <Link className="home" activeClassName="active" to="/">HOME</Link>
+              <Link className={classNames1} onClick={() => {setSelectedIndex(0); console.log(selectedIndex)}} to="/">HOME</Link>
             </li>
             <li >
-              <Link className="fav" activeClassName="active" to="/favourite">FAVOURITE</Link>
+              <Link className={classNames2} onClick={() => {setSelectedIndex(1)}} to="/favourite">FAVOURITE</Link>
             </li> 
            <li>
-              <Link className="search" activeClassName="active" to="/recentsearch">RECENT SEARCH</Link>
+              <Link className={classNames3} onClick={() => {setSelectedIndex(2)}} to="/recentsearch">RECENT SEARCH</Link>
             </li> 
             <div className="date">{dateBuilder(new Date())} {timeBuilder(new Date())}</div>
           </ul>
@@ -78,6 +80,8 @@ function timeBuilder(date) {
               setSearchInfo = {setSearchInfo}
 
               favInfo={favInfo}
+
+              setSelectedIndex={setSelectedIndex}
             />
           </Route>
           
@@ -86,6 +90,8 @@ function timeBuilder(date) {
           setFavInfo={setFavInfo} 
             message={message}
             setMessage={setMessage}
+
+            setSelectedIndex={setSelectedIndex}
           />
           </Route>
 
@@ -103,6 +109,8 @@ function timeBuilder(date) {
 
             searchInfo = {searchInfo}
             setSearchInfo = {setSearchInfo}
+
+            setSelectedIndex={setSelectedIndex}
             />
           </Route>
         </Switch>
@@ -111,6 +119,5 @@ function timeBuilder(date) {
     </Router>
   );
 }
-
 
 export default App;

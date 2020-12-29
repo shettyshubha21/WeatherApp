@@ -1,14 +1,11 @@
-import React, {useState, useEffect} from 'react';
-import PropTypes from 'prop-types';
+import React, {useState} from 'react';
 import styles from './Home.module.css';
 import DisplayWeather from '../DisplayWeather/DisplayWeather';
 import { BsSearch } from "react-icons/bs";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
-import { useHistory } from "react-router-dom";
 import cn from 'classnames';
 
-
-const Home = ({favInfo, setFavInfo, message, setMessage, search, setSearch, searchInfo, setSearchInfo}) => {
+const Home = ({favInfo, setFavInfo, message, setMessage, searchInfo, setSearchInfo}) => {
     const [weather, setWeather] = useState([]);
     const [form, setForm] = useState({
       city: ""
@@ -20,7 +17,7 @@ const Home = ({favInfo, setFavInfo, message, setMessage, search, setSearch, sear
     const APIKEY = "6d60bab8f1abb2a000ac29259c7d1b26";
     async function weatherData(e) {
       e.preventDefault();
-      if (form.city == "") {
+      if (form.city === "") {
         alert("Add values");
       } else {
         const data = await fetch(
@@ -95,11 +92,6 @@ return (
     
 </div>
 );
-};
-
-
-Home.propTypes = {
-
 };
 
 export default Home;

@@ -1,13 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import PropTypes from 'prop-types';
 import styles from './RecentSearch.module.css';
-import Home from '../Home/Home';
 import { BsFillHeartFill, BsHeart } from "react-icons/bs";
 import Modal from '../Modal/Modal';
 import { BsSearch } from "react-icons/bs";
 import { useHistory } from "react-router-dom";
 
-const RecentSearch = ({searchInfo, setSearchInfo, favInfo}) => {
+const RecentSearch = ({searchInfo, setSearchInfo, favInfo, setSelectedIndex}) => {
 const [clear,setClear] = useState(false);
 let history = useHistory();
 
@@ -38,7 +36,7 @@ return (
           name="city"
           
         />
-        <button onClick={()=>{history.push("/") } } >
+        <button onClick={()=>{history.push("/"); setSelectedIndex(0); } } >
           {<BsSearch/>}
         </button>
       </form>
@@ -81,11 +79,6 @@ return (
       </div>
 </div>
 );
-};
-
-
-RecentSearch.propTypes = {
-
 };
 
 export default RecentSearch;

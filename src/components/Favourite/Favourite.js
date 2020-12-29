@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import styles from './Favourite.module.css';
-import Home from '../Home/Home';
-import DisplayWeather from '../DisplayWeather/DisplayWeather';
 import { BsFillHeartFill } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 import Modal from '../Modal/Modal';
 import { useHistory } from "react-router-dom";
 
-const Favourite = ({favInfo,setFavInfo,message, setMessage}) => {
+const Favourite = ({favInfo, setFavInfo, setSelectedIndex}) => {
     const [show,setShow] = useState(false);
     let history = useHistory();
 return (
@@ -21,7 +18,7 @@ return (
           name="city"
           
         />
-        <button onClick={()=>{history.push("/") } } >
+        <button onClick={()=>{history.push("/"); setSelectedIndex(0) } } >
           {<BsSearch/>}
         </button>
       </form>
@@ -64,11 +61,6 @@ return (
 </div>
 </div>
 );
-};
-
-
-Favourite.propTypes = {
-
 };
 
 export default Favourite;
